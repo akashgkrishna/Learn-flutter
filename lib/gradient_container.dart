@@ -5,15 +5,19 @@ var startColor = Alignment.topLeft;
 var endColor = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.color1, this.color2, this.color3, {super.key});
+
+  final Color color1;
+  final Color color2;
+  final Color color3;
+
+
   @override
   Widget build(context) {
     return Container(
       decoration:  BoxDecoration(
-        gradient: LinearGradient(colors: const[
-          Colors.cyan,
-          Color.fromARGB(255, 67, 25, 184),
-          Colors.cyan,
+        gradient: LinearGradient(colors: [
+         color1, color2, color3
         ], begin: startColor, end: endColor),
       ),
       child: const Center(
@@ -22,3 +26,6 @@ class GradientContainer extends StatelessWidget {
     );
   }
 }
+//  Colors.cyan,
+//           Color.fromARGB(255, 67, 25, 184),
+//           Colors.cyan,
