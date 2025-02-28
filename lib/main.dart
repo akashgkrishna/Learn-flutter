@@ -1,32 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:first_app/gradient_container.dart'; // Import the GradientContainer widget
 
+// Main function to run the Flutter application
 void main() {
   runApp(
-    MaterialApp(
+    // Run the MaterialApp widget as the root of the application
+    const MaterialApp(
+      // Scaffold widget to provide basic layout structure
       home: Scaffold(
-        body: GradientContainer() // GradientContainer constructor call
+        body: GradientContainer(
+          Colors.cyan, // Start color of the gradient
+          Color.fromARGB(255, 67, 25, 184), // Middle color of the gradient
+          Colors.cyan, // End color of the gradient
+        ),
       ),
     ),
   );
-}
-
-class GradientContainer extends StatelessWidget {
-  @override
-  Widget build(context) {
-    return Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Colors.cyan,
-              Color.fromARGB(255, 67, 25, 184),
-              Colors.cyan,
-            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-          ),
-          child: const Center(
-            child: Text(
-              "Hello! Welcome!!!",
-              style: TextStyle(fontSize: 28, color: Colors.white),
-            ),
-          ),
-        );
-  }
 }
